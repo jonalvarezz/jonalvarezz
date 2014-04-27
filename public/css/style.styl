@@ -1,5 +1,148 @@
+@import "nib"
+@import "normalize"
+
+vendor-prefixes = webkit o ms moz official
+
+// Mixins'n'Helpers
+emerald =		#2ecc71
+cloud =			#ecf0f1
+dark-blue =		#2c3e50
+silver =		#bdc3c7
+light-gray =	#f8f8f8
+gray =			#414141
+
+*,
+*:before,
+*:after
+	box-sizing border-box
+
+html
+	font-size 100%
+	@media (min-width: 40rem)
+		font-size 112%
+	@media (min-width: 64rem)
+		font-size 120%
+
 body
-  padding: 50px
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif
+	font-family 'Lato', sans-serif
+	font-size 1rem
+	color gray
+
 a
-  color: #00B7FF
+	text-decoration none
+
+p
+	font-size 1.25rem // 20px
+	line-height 1.8rem
+
+.block-center
+	margin 0 auto
+
+.text-center
+	text-align center
+.text-right
+	text-align right
+.text-left
+	text-align left
+
+img
+	vertical-align top
+	max-width 100%
+	height auto
+
+.inline-list
+	list-style-type none
+	li
+		display inline-block
+
+.button
+	padding .5rem 2.2rem
+	transition all .4s
+	&.green
+		color emerald
+		border 1px solid emerald
+		&:hover,
+		&:focus
+			color darken(emerald,20%)
+			border-color darken(emerald,20%)
+
+/* Columns
+ ============================= */
+
+.container
+	margin 0 auto
+	width 90%
+
+.row
+	*zoom 1
+	&:after
+	&:before
+		content " "
+		display table
+	&:after
+		clear both
+
+@media (min-width: 40rem)
+
+	.col
+		float left
+		padding-left 1rem
+		padding-right 1rem
+		&.half
+			width 50%
+		&.inverse-flow
+			float right
+
+/* Header
+ ============================= */
+header
+	background-color emerald
+	color #fff
+	display table
+	height 100%
+	width 100%
+	margin-bottom 2rem
+	.wrap
+		display table-cell
+		vertical-align middle
+.brief
+	max-width 25rem
+	padding 1rem
+	color light-gray
+
+/* Works
+ ============================= */
+margin-return = -5%
+section h2
+	font-size 2.2rem
+
+.work
+	margin 2rem 0
+	figure
+		height 30rem
+		background-size contain
+		background-position-x 0
+		background-position-y center
+		background-repeat no-repeat
+
+	&:nth-child(odd) figure
+		margin-left margin-return
+
+	&:nth-child(even) figure
+		margin-right margin-return
+
+	.view
+		margin 2rem .5rem
+
+#ubicarsatelital figure
+	background-image url(../img/works/land-ubicar.png)
+#invertirmejor figure
+	background-image url(../img/works/land-invertirmejor.png)
+
+.big-font
+	font-size 1.8rem
+
+.description
+	color lighten(gray,5%)
+
+
