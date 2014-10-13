@@ -13,5 +13,9 @@ node_modules
 # Users Environment Variables
 .lock-wscript
 
-ideas/
+# Any minified files
 *.min.*
+
+# Bower modules
+public/js/lib
+
