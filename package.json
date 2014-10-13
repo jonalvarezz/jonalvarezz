@@ -6,6 +6,9 @@
     "name": "Jonathan Alvarez Gonzalez",
     "email": "j@jonalvarezz.com"
   },
+  "scripts": {
+    "start": "node server.js"
+  },
   "homepage": "https://github.com/jonalvarezz/jonalvarezz",
   "license": "MIT",
   "repository": {
