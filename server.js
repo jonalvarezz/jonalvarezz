@@ -7,14 +7,18 @@
 var express					= require('express'),
 		path						= require('path'),
 		app							= express(),
+		livereload			= require('connect-livereload'),
 		bodyParser			= require('body-parser'),
 		methodOverride	= require('method-override');
 
-var port = process.env.PORT || 8081;
+var port = process.env.PORT || 4000;
 
 
 // Configure express server
 // ============================================
+
+// Listen LiveReload events
+app.use( livereload( {port: 4002} ) );
 
 // get all data/stuff of the body (POST) parameters
 // parse application/json 
