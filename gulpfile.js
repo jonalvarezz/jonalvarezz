@@ -15,7 +15,7 @@ var gulp				= require('gulp'),
 */
 gulp.task('server', function(){
 	server.run({
-		file: 'server.js'
+		file: 'index.js'
 	});
 
 	//Set up your livereload server
