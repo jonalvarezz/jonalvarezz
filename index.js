@@ -9,6 +9,7 @@ var express				= require('express'),
 	app					= express(),	
 	bodyParser			= require('body-parser'),
 	methodOverride		= require('method-override'),
+	favicon				= require('serve-favicon'),
 	livereload;
 
 var port = process.env.PORT || 4000;
@@ -44,6 +45,9 @@ app.use(methodOverride('X-HTTP-Method-Override'));
 
 // set the static files location /public/img will be /img for users
 app.use( express.static( path.join(__dirname, 'public') ));
+
+// serve the favicon
+app.use( favicon( ( path.join(__dirname, 'public/favicon.ico') ) ));
 
 // routes
 // ============================================

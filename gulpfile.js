@@ -80,6 +80,9 @@ gulp.task('copy-static', function() {
 		}))
 		.pipe(gulp.dest('./dist/public/img'));
 
+	gulp.src( staticPath + 'favicon.ico')
+		.pipe(gulp.dest('./dist/public'));
+
 	gulp.src( 'app/**')
 		.pipe(gulp.dest('./dist/app'));
 
