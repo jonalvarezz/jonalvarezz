@@ -62,9 +62,13 @@ light-green = #00FF48
  * Buttons
  */
 
-button-color(color, bg = light-gray)
+button-color(color)
     color color
     border-color color
+    &:hover
+    &:focus
+        color darken( color, 10%)
+        border-color darken( color, 10%)
 
 .button
     font-family "Lato", Arial
@@ -73,9 +77,9 @@ button-color(color, bg = light-gray)
     border 1px solid gray
     transition background-color .3s ease-out
     &.white
-        button-color(#fff, light-green)
+        button-color(#fff)
     &.green
-        button-color(green, light-green)
+        button-color(green)
 
 input[type="submit"]
 button
