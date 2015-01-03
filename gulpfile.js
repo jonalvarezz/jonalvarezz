@@ -6,7 +6,7 @@ var gulp								= require('gulp'),
 		lrserver						= require('tiny-lr')(),
 		rename							= require('gulp-rename'),
 		stylus							= require('gulp-stylus'),
-		koutoSwiss					= require('kouto-swiss'),
+		nib					= require('nib'),
 		staticPath					=	'./public/';
 
 /*
@@ -33,8 +33,7 @@ gulp.task('server', function(){
 gulp.task('css', function() {
 	gulp.src( staticPath + 'css/main.styl' )
 		.pipe(stylus({
-			use: koutoSwiss(),
-			compress: true
+			use: nib()
 		}))
 		.pipe(rename('main.min.css'))
 		.pipe(gulp.dest( staticPath + 'css/min/'))
