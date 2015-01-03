@@ -9,7 +9,7 @@ Some other tools used for the construction of this app are gulp, bower, stylus a
 Feel free to use this repo as a guide for your learnings
 
 ## Roadmap
-* **v0.4.0** The first release will use Express to send a plain html file. The information will be hardcoded in that file.
+* [**v0.4.0**](https://github.com/jonalvarezz/jonalvarezz/releases/tag/v0.4.1) The first release will use Express to send a plain html file. The information will be hardcoded in that file.
 
 * **v0.8.0** The information will be stored in MongoDB. Angular will load the information through an API served by Express.
 
