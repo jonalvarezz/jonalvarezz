@@ -110,3 +110,38 @@ button
 
 .text-big
     font-size 1.7rem
+    
+/*
+ * Animations
+ */
+@keyframes bounceInDownShort
+    0%, 100%
+        transition-timing-function cubic-bezier(0.215, 0.610, 0.355, 1.000)
+    0%
+        opacity 0
+        transform translate3d(0, -30px, 0)
+    100%
+        transform translate3d(0, 0, 0)
+        
+@keyframes bounceInDown
+    0%, 100%
+        transition-timing-function cubic-bezier(0.215, 0.610, 0.355, 1.000)
+    0%
+        opacity 0
+        transform translate3d(0, -100px, 0)  
+    100%
+        transform translate3d(0, 0, 0)
+
+@keyframes bounceInUp
+  0%, 100%
+    transition-timing-function cubic-bezier(0.215, 0.610, 0.355, 1.000)
+  0%
+    opacity 0
+    transform translate3d(0, 100px, 0)  
+  100%
+    transform translate3d(0, 0, 0)
+
+.animate
+    animation-name bounceInUp
+    animation-duration 700ms
+    animation-fill-mode both
