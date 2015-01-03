@@ -49,9 +49,6 @@ light-green = #00FF48
         display table-cell
         vertical-align middle
 
-.block-center
-    margin 0 auto
-
 .island
     padding 3.5rem 0
     &.green
@@ -93,18 +90,6 @@ button
     margin 0
     list-style-type none
 
-
-.hoverable
-    li:hover
-        background-color #f5f5f5
-
-.inline-list
-	li
-		display inline-block
-
-.pull-right
-	float right
-
 /*
  * Text
  */
@@ -120,30 +105,3 @@ button
 
 .text-big
     font-size 1.7rem
-
-.alert
-    background-color #FDFBCD
-    color #9B7106
-    border-left 10px solid #E2B749
-    padding 1rem
-
-/*
- * Responsive Utilities
- */
-
-.inline-list-desktop
-	display none
-
-	li
-		display inline-block
-	
-	@media (min-width: 50em)
-		display inline-block
-
-.text-center-s
-	@media (max-width: 50em )
-		text-align center
-
-.text-center-xs
-	@media (max-width: 40em )
-		text-align center
