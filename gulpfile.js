@@ -69,16 +69,31 @@ gulp.task('watch', function() {
 gulp.task('copy-static', function() {
 	gulp.src( staticPath + 'index.html')
 		.pipe(useref())
-		.pipe(gulp.dest('./dist'));
+		.pipe(gulp.dest('./dist/public'));
 
 	gulp.src( staticPath + 'css/fonts/**')
-		.pipe(gulp.dest('./dist/fonts'));
+		.pipe(gulp.dest('./dist/public/fonts'));
 	
 	gulp.src( staticPath + 'img/**')
 		.pipe(imagemin({
 			progressive: true
 		}))
-		.pipe(gulp.dest('./dist/img'));
+		.pipe(gulp.dest('./dist/public/img'));
+
+	gulp.src( 'app/**')
+		.pipe(gulp.dest('./dist/app'));
+
+	gulp.src( 'config/**')
+		.pipe(gulp.dest('./dist/config'));
+
+	gulp.src( 'index.js')
+		.pipe(gulp.dest('./dist'));
+
+	gulp.src( 'package.json')
+		.pipe(gulp.dest('./dist'));
+
+	gulp.src( 'README.md')
+		.pipe(gulp.dest('./dist'));
 });
 
 gulp.task('compress-assets', function() {
@@ -86,7 +101,7 @@ gulp.task('compress-assets', function() {
 		.pipe(useref.assets())
 		.pipe(gulpif('*.js', uglify()))
 		.pipe(gulpif('*.css', minifyCss()))
-		.pipe(gulp.dest('./dist'));
+		.pipe(gulp.dest('./dist/public'));
 });
 
 gulp.task('build', ['copy-static', 'compress-assets']);

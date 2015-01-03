@@ -12,11 +12,9 @@ var express				= require('express'),
 	livereload;
 
 var port = process.env.PORT || 4000;
-var assetsFolder = 'dist';
 
 // Set default enviroment as development
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
-
 
 // Configure express server
 // ============================================
@@ -29,9 +27,6 @@ if( process.env.NODE_ENV === 'development' ) {
 	// Enable livereload
 	livereload	= require('connect-livereload');
 	app.use( livereload( {port: 4002} ) );
-
-	// List dist folder
-	assetsFolder = 'public';
 }
 
 // get all data/stuff of the body (POST) parameters
@@ -48,7 +43,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride('X-HTTP-Method-Override'));
 
 // set the static files location /public/img will be /img for users
-app.use( express.static( path.join(__dirname, assetsFolder) ));
+app.use( express.static( path.join(__dirname, 'public') ));
 
 // routes
 // ============================================
