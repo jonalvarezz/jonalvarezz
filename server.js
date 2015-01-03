@@ -12,13 +12,26 @@ var express				= require('express'),
 	methodOverride		= require('method-override');
 
 var port = process.env.PORT || 4000;
+var assetsFolder = 'dist';
+
+// Set default enviroment as development
+process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
 
 // Configure express server
 // ============================================
 
-// Listen LiveReload events
-app.use( livereload( {port: 4002} ) );
+// Development enviroment additional settings
+if( process.env.NODE_ENV === 'development' ) {
+
+	console.log('Running in ' + process.env.NODE_ENV + ' enviroment');
+
+	// Enable livereload
+	app.use( livereload( {port: 4002} ) );
+
+	// List dist folder
+	assetsFolder = 'public';
+}
 
 // get all data/stuff of the body (POST) parameters
 // parse application/json 
@@ -34,7 +47,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride('X-HTTP-Method-Override'));
 
 // set the static files location /public/img will be /img for users
-app.use( express.static( path.join(__dirname, 'public') ));
+app.use( express.static( path.join(__dirname, assetsFolder) ));
 
 // routes
 // ============================================
@@ -46,7 +59,7 @@ require('./app/routes')(app); // configure our routes
 app.listen(port);
 
 
-// shoutout to the user                     
+// shoutout to the user
 console.log('Magic happening on port http://localhost:' + port);
 // expose app           
 exports = module.exports = app;
