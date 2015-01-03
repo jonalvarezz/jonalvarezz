@@ -4,12 +4,12 @@
  *
 */
 
-var express					= require('express'),
-		path						= require('path'),
-		app							= express(),
-		livereload			= require('connect-livereload'),
-		bodyParser			= require('body-parser'),
-		methodOverride	= require('method-override');
+var express				= require('express'),
+	path				= require('path'),
+	app					= express(),
+	livereload			= require('connect-livereload'),
+	bodyParser			= require('body-parser'),
+	methodOverride		= require('method-override');
 
 var port = process.env.PORT || 4000;
 

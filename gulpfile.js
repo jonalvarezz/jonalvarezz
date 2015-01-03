@@ -1,13 +1,13 @@
 'use strict';
 
-var gulp								= require('gulp'),
-		server							= require('gulp-express'),
-		refresh							= require('gulp-livereload'),
-		lrserver						= require('tiny-lr')(),
-		rename							= require('gulp-rename'),
-		stylus							= require('gulp-stylus'),
-		nib					= require('nib'),
-		staticPath					=	'./public/';
+var gulp				= require('gulp'),
+	server				= require('gulp-express'),
+	refresh				= require('gulp-livereload'),
+	lrserver			= require('tiny-lr')(),
+	rename				= require('gulp-rename'),
+	stylus				= require('gulp-stylus'),
+	nib					= require('nib'),
+	staticPath			= './public/';
 
 /*
  * Server process
