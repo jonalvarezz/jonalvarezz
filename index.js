@@ -6,10 +6,10 @@
 
 var express				= require('express'),
 	path				= require('path'),
-	app					= express(),
-	livereload			= require('connect-livereload'),
+	app					= express(),	
 	bodyParser			= require('body-parser'),
-	methodOverride		= require('method-override');
+	methodOverride		= require('method-override'),
+	livereload;
 
 var port = process.env.PORT || 4000;
 var assetsFolder = 'dist';
@@ -27,6 +27,7 @@ if( process.env.NODE_ENV === 'development' ) {
 	console.log('Running in ' + process.env.NODE_ENV + ' enviroment');
 
 	// Enable livereload
+	livereload	= require('connect-livereload');
 	app.use( livereload( {port: 4002} ) );
 
 	// List dist folder
