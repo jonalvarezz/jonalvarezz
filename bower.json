@@ -1,5 +1,8 @@
 {
   "name": "jonalvarezz.com",
   "version": "0.0.1",
-  "description": "My personal website."
+  "description": "My personal website.",
+  "dependencies": {
+    "jquery": "~2.1.1"
+  }
 }
