@@ -19,3 +19,5 @@ node_modules
 # Bower modules
 public/js/lib
 
+# Production file
+dist/

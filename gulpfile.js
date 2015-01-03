@@ -7,7 +7,14 @@ var gulp				= require('gulp'),
 	rename				= require('gulp-rename'),
 	stylus				= require('gulp-stylus'),
 	nib					= require('nib'),
-	staticPath			= './public/';
+	staticPath			= './public/',
+
+	// Build tools
+	useref				= require('gulp-useref'),
+	gulpif				= require('gulp-if'),
+	imagemin			= require('gulp-imagemin'),
+	uglify				= require('gulp-uglify'),
+	minifyCss			= require('gulp-minify-css');
 
 /*
  * Server process
@@ -54,4 +61,33 @@ gulp.task('watch', function() {
 	gulp.watch( [staticPath + '**/*.html'], ['html'] );
 });
 
+
+/*
+ * Build tasks for production
+*/
+
+gulp.task('copy-static', function() {
+	gulp.src( staticPath + 'index.html')
+		.pipe(useref())
+		.pipe(gulp.dest('./dist'));
+
+	gulp.src( staticPath + 'css/fonts/**')
+		.pipe(gulp.dest('./dist/fonts'));
+	
+	gulp.src( staticPath + 'img/**')
+		.pipe(imagemin({
+			progressive: true
+		}))
+		.pipe(gulp.dest('./dist/img'));
+});
+
+gulp.task('compress-assets', function() {
+	gulp.src( staticPath + 'index.html')
+		.pipe(useref.assets())
+		.pipe(gulpif('*.js', uglify()))
+		.pipe(gulpif('*.css', minifyCss()))
+		.pipe(gulp.dest('./dist'));
+});
+
+gulp.task('build', ['copy-static', 'compress-assets']);
 gulp.task('default', [ 'server', 'css', 'watch' ]);
