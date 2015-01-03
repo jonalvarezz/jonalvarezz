@@ -52,24 +52,33 @@ light-green = #00FF48
 .block-center
     margin 0 auto
 
+.island
+    padding 3.5rem 0
+    &.green
+        background-color green
+        color #fff
+    &.dark
+        background-color dark-gray
+        color #fff
+
 /*
  * Buttons
  */
 
-button-color(color, bg = gray)
+button-color(color, bg = light-gray)
     color color
-    background-color bg
-    transition background-color .3s ease-out
-    &:focus
-    &:hover
-        background-color darken(bg, 10%)
+    border-color color
 
 .button
+    font-family "Lato", Arial
+    font-weight 400
     padding 0.5rem 1.5rem
-    &.red
-        button-color(#fff, red)
+    border 1px solid gray
+    transition background-color .3s ease-out
+    &.white
+        button-color(#fff, light-green)
     &.green
-        button-color(#fff, green)
+        button-color(green, light-green)
 
 input[type="submit"]
 button
@@ -80,8 +89,9 @@ button
  */
 
 .list
-	margin 0
-	list-style-type none
+    padding 0
+    margin 0
+    list-style-type none
 
 
 .hoverable

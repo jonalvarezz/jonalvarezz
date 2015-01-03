@@ -15,14 +15,17 @@ ks-vendors-prefixes = recommended
  * ------------------------------
  */
 
+// Normalize babe
+normalize()
+
 *,
 *:before,
 *:after
 	box-sizing border-box
 
 html
-	font 100%/1.5 "Helvetica", Arial
-	font-weight normal
+	font 100%/1.5 "Lora", serif
+	font-weight 400
 	text-rendering optimizeLegibility
 	-webkit-font-smoothing antialiased
 
@@ -34,6 +37,7 @@ html
 body
 	background-color #fff
 	color gray
+	margin 0
 
 a
 	text-decoration none
@@ -77,3 +81,32 @@ table
 		border-bottom 1px solid light-gray
 		&:hover
 			background-color #f1f1f1
+
+.title
+	font-family "Lato"
+	font-weight 900
+
+// Hero
+// ====================================
+.hero
+	color white
+	height 100%
+	background-color green
+	background url("../../img/bg.jpg") center center no-repeat fixed
+	background-size cover
+	.title
+		margin 0
+
+
+// #Works
+// ====================================
+
+.work-item
+	float left
+	width 20%
+	height 180px
+
+
+	.work-item__desc
+		display none
+	

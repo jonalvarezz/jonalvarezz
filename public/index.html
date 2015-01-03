@@ -13,9 +13,134 @@
 </head>
 <body>
 
-	<div class="container">
-		<h1>Hi Stranger!</h1>
-	</div>
+	<header id="hi" class="hero center-text vertical-align">
+		<div class="wrapper">
+			<hgroup class="container">
+				<h1 class="title">Jonathan Álvarez G.</h1>
+				<p>Hi! I'm a Frontend web developer and designer enthusiast.
+					 Each wrong positioned pixel disturb my mind.
+				</p>
+			</hgroup>
+		</div>
+	</header>
+
+	<section id="brief" class="island center-text">
+		<article class="container">
+			<h2 class="title">A web passionate &#9829;</h2>
+			<p>I love to create simple, powerful and beautiful stuff.
+				 Read and try always to use best practices.
+			</p>
+		</article>
+	</section>
+
+	<section id="works" class="island green center-text">
+		<article class="container">
+			<h2 class="title">Some featured works</h2>
+			<p>These are some of my favorities works. 
+				Technologies I use are HTML5, CSS3 and javascript, of course. 
+				I try not to be a <em>framework dependant</em> developer, specially for CSS. 
+				But for Javascript I like to use AngularJS and experiment with the NodeJS world
+			</p>
+		</article>
+		<ul class="list work-list clearfix">
+			<li class="work-item" style="background: url(img/works/vxaudiovisual.jpg) center center no-repeat;">
+				<div class="work-item__desc">
+					<h3 class="title">VX Audiovsual</h3>
+					<p>CSS, HTML, Javascript</p>
+					<p>
+						<a href="http://vxaudiovisual.com" class="button white" target="_blank" title="View this site">
+							View this site
+						</a>
+					</p>
+				</div>
+			</li>
+			<li class="work-item" style="background: url(img/works/arautos.jpg) center center no-repeat;">
+				<div class="work-item__desc">
+					<h3 class="title">AR Autos</h3>
+					<p>Custom Wordpress, CSS, HTML, Javascript</p>
+					<p>
+						<a href="http://arautossas.com" class="button white" target="_blank" title="View this site">
+							View this site
+						</a>
+					</p>
+				</div>
+			</li>
+			<li class="work-item" style="background: url(img/works/simovil.jpg) center center no-repeat;">
+				<div class="work-item__desc">
+					<h3 class="title">Simovil Comunicaciones</h3>
+					<p>E-commerce, Wordpress, CSS, HTML, Javascript</p>
+					<p>
+						<a href="http://simovil.tamarindolabs.com" class="button white" target="_blank" title="View this site">
+							View this site
+						</a>
+					</p>
+				</div>
+			</li>
+			<li class="work-item" style="background: url(img/works/invertirmejor.jpg) center center no-repeat;">
+				<div class="work-item__desc">
+					<h3 class="title">Invertir Mejor</h3>
+					<p>Backend, CSS, HTML, Javascript</p>
+					<p>
+						<a href="http://invertirmejor.com" class="button white" target="_blank" title="View this site">
+							View this site
+						</a>
+					</p>
+				</div>
+			</li>
+			<li class="work-item" style="background: url(img/works/goldenhouse.jpg) center center no-repeat;">
+				<div class="work-item__desc">
+					<h3 class="title">Golden House</h3>
+					<p>Custom WordpressCSS, HTML, Javascript</p>
+					<p>
+						<a href="http://goldenhouse.com" class="button white" target="_blank" title="View this site">
+							View this site
+						</a>
+					</p>
+				</div>
+			</li>
+		</ul>
+		<p>
+			<a href="#contact" class="button white" title="Get in touch!">Contact me</a>
+		</p>
+	</section>
+
+	<section id="blog" class="island center-text">
+		<article class="container">
+			<h2 class="title">Checkout my blog</h2>
+			<p>
+				Web give us a lot, I try to reward it back
+			</p>
+			<p>
+				<a href="/blog" class="button green" title="Jonathan Alvarez G. Blog">Visit my blog</a>
+			</p>
+		</article>
+	</section>
+
+	<section id="contact" class="island dark center-text">
+		<article class="container">
+			<h2 class="title">Get in touch</h2>
+			<p>
+				What's your awesome idea? I'm available for freelance works :)
+			</p>
+		</article>
+	</section>
+
+	<script type="text/javascript">
+		WebFontConfig = {
+			google: { families: [ 'Lato:400,900:latin', 'Lora:400,400italic:latin' ] }
+		};
+		(function() {
+			var wf = document.createElement('script');
+			wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+			'://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+			wf.type = 'text/javascript';
+			wf.async = 'true';
+			var s = document.getElementsByTagName('script')[0];
+			s.parentNode.insertBefore(wf, s);
+		})();
+  </script>
+  <script src="js/lib/jquery/dist/jquery.min.js"></script>
+  <script src="js/main.js"></script>
 
 </body>
 </html>
